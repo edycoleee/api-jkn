@@ -1,0 +1,15 @@
+################################
+//get server
+GET http://localhost:3000/
+
+###############################
+//get diagnosa
+GET http://localhost:3000/diagnosa/A08.5
+
+################################
+//get poli
+GET http://localhost:3000/poli/ICU
+
+################################
+//get faskes
+GET http://localhost:3000/faskes/kalijaga/2
