@@ -22,8 +22,17 @@ const aplicareOptions = {
   service: "aplicaresws",
 };
 
+const antrianOptions = {
+  host: "apijkn-dev.bpjs-kesehatan.go.id",
+  port: ":8888",
+  service: "antreanrs_dev",
+};
+
 const uri = `https://${options.host}/${options.service}/`;
 const aplicareuri = `https://${aplicareOptions.host}${aplicareOptions.port}/${aplicareOptions.service}/`;
+const uri_antrian = `https://${antrianOptions.host}/${antrianOptions.service}/`;
+
+//https://apijkn-dev.bpjs-kesehatan.go.id/antreanrs_dev
 
 function stringDecryptV2(tStamp, string) {
   const keyString = consId + secret + tStamp;
@@ -59,6 +68,7 @@ const createHeader = (tStamp) => {
 module.exports = {
   uri,
   aplicareuri,
+  uri_antrian,
   stringDecryptV2,
   decompressV2,
   createHeader,

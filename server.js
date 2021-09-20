@@ -1,6 +1,7 @@
 const express = require("express");
 const moment = require("moment");
 const { getDiagnosa, getPoli, getFaskes } = require("./API/api_vclaim");
+const { getAntriPoli } = require("./API/api_antrian2");
 const app = express();
 
 //LOGGER
@@ -66,6 +67,11 @@ app.get("/faskes/:par1/:par2", getFaskes);
 // app.get("/klaim/:par1/:par2/:par3", getKlaim);
 // app.get("/history/:par1/:par2/:par3", getHistory);
 // app.get("/raharja/:par1/:par2/", getRaharja);
+
+//BPJS-ANTRIAN V2
+//Referensi
+app.get("/antri-poli", getAntriPoli);
+
 
 const port = 3000;
 
