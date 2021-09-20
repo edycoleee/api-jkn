@@ -13,3 +13,8 @@ GET http://localhost:3000/poli/ICU
 ################################
 //get faskes
 GET http://localhost:3000/faskes/kalijaga/2
+
+
+###############################
+
+GET http://localhost:3000/antri-poli
