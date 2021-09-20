@@ -22,6 +22,12 @@ const aplicareOptions = {
   service: "aplicaresws",
 };
 
+const antrianOptionsLive = {
+  host: "apijkn.bpjs-kesehatan.go.id",
+  port: ":8888",
+  service: "antreanrs",
+};
+
 const antrianOptions = {
   host: "apijkn-dev.bpjs-kesehatan.go.id",
   port: ":8888",

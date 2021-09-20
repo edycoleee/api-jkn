@@ -3,18 +3,22 @@
 GET http://localhost:3000/
 
 ###############################
-//get diagnosa
+//vclaim1.1 dvlp get diagnosa
 GET http://localhost:3000/diagnosa/A08.5
 
 ################################
-//get poli
+//vclaim1.1 dvlp get diagnosa
 GET http://localhost:3000/poli/ICU
 
 ################################
-//get faskes
+//vclaim1.1 dvlp faskes
 GET http://localhost:3000/faskes/kalijaga/2
 
 
 ###############################
-
+//antreanv2 dvlp get ref poli
 GET http://localhost:3000/antri-poli
+
+###############################
+//antreanv2 dvlp get dokter
+GET http://localhost:3000/antri-jadwal/kodepoli/ANA/tanggal/2021-09-20
