@@ -21,4 +21,4 @@ GET http://localhost:3000/antri-poli
 
 ###############################
 //antreanv2 dvlp get dokter
-GET http://localhost:3000/antri-jadwal/kodepoli/ANA/tanggal/2021-09-20
+GET http://localhost:3000/antri-jadwal/kodepoli/UMU/tanggal/2021-08-01
