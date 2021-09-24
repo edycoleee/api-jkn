@@ -2,6 +2,10 @@ const express = require("express");
 const moment = require("moment");
 const { getDiagnosa, getPoli, getFaskes } = require("./API/api_vclaim");
 const { getAntriPoli } = require("./API/api_antrian2");
+const vclaimRoutes = require("./routes/vclaimRoutes")
+const antrianRoutes = require("./routes/antrianRoutes")
+const aplicareRoutes = require("./routes/aplicareRoutes")
+
 const app = express();
 
 //LOGGER
@@ -15,6 +19,10 @@ const logger = (req, res, next) => {
 };
 
 app.use(logger);
+
+app.use('/vclaim',vclaimRoutes);
+app.use('/antrian',vclaimRoutes);
+app.use('/aplicare',vclaimRoutes);
 // Body Parser Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -25,6 +33,15 @@ app.get("/", (req, res) => {
     BackEnd: "node js",
   });
 });
+
+
+//Routes
+//VCLAIM -
+
+
+
+
+
 
 //BPJS
 //Referensi

@@ -39,10 +39,10 @@ const delAntrian = async (api_url, body) => {
 //{BASE URL}/ref/poli
 //http://localhost:3000/antri-poli
 const getAntriPoli = async (request, response) => {
-  //const midle_url = "ref/poli";
+  const midle_url = "ref/poli";
   //const midle_url = "ref/dokter";
   //OBG/ORT/ANA/INT/UMU
-  const midle_url = "jadwaldokter/kodepoli/UMU/tanggal/2021-08-01";
+  //const midle_url = "jadwaldokter/kodepoli/UMU/tanggal/2021-08-01";
   const api_url = `${uri_antrian}${midle_url}`;
   console.log(api_url);
   const tStamp = Math.floor(Date.now() / 1000);

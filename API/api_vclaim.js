@@ -19,7 +19,7 @@ const getBPJS = async (api_url, tStamp) => {
 const getDiagnosa = async (request, response) => {
   const par1 = request.params.par1;
   const midle_url = "referensi/diagnosa";
-  const api_url = `${uri}/${midle_url}/${par1}`;
+  const api_url = `${uri}${midle_url}/${par1}`;
   const tStamp = Math.floor(Date.now() / 1000);
   return await getBPJS(api_url, tStamp)
     .then(async (res) => {
@@ -41,7 +41,7 @@ const getPoli = async (request, response) => {
   console.log("get poli");
   const par1 = request.params.par1;
   const midle_url = "referensi/poli";
-  const api_url = `${uri}/${midle_url}/${par1}`;
+  const api_url = `${uri}${midle_url}/${par1}`;
   const tStamp = Math.floor(Date.now() / 1000);
   return await getBPJS(api_url, tStamp)
     .then(async (res) => {
@@ -65,7 +65,7 @@ const getFaskes = async (request, response) => {
   const midle_url = "referensi/faskes";
   const par1 = request.params.par1;
   const par2 = request.params.par2;
-  const api_url = `${uri}/${midle_url}/${par1}/${par2}`;
+  const api_url = `${uri}${midle_url}/${par1}/${par2}`;
   const tStamp = Math.floor(Date.now() / 1000);
   return await getBPJS(api_url, tStamp)
     .then(async (res) => {

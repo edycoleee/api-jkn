@@ -2,17 +2,34 @@
 //get server
 GET http://localhost:3000/
 
+################################
+//get api vclaim
+GET http://localhost:3000/vclaim
+
 ###############################
 //vclaim1.1 dvlp get diagnosa
-GET http://localhost:3000/diagnosa/A08.5
+GET http://localhost:3000/vclaim/diagnosa/A08.5
 
 ################################
 //vclaim1.1 dvlp get diagnosa
-GET http://localhost:3000/poli/ICU
+GET http://localhost:3000/vclaim/poli/ICU
 
 ################################
 //vclaim1.1 dvlp faskes
-GET http://localhost:3000/faskes/kalijaga/2
+GET http://localhost:3000/vclaim/faskes/kalijaga/2
+
+################################
+//get api antrian
+GET http://localhost:3000/antrian
+
+################################
+//get api aplicare
+GET http://localhost:3000/aplicare
+
+
+
+
+
 
 
 ###############################
