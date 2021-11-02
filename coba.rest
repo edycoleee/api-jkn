@@ -8,16 +8,173 @@ GET http://localhost:3000/vclaim
 
 ###############################
 //vclaim1.1 dvlp get diagnosa
+//{Base URL}/vclaim/diagnosa/{parameter}
 GET http://localhost:3000/vclaim/diagnosa/A08.5
 
 ################################
 //vclaim1.1 dvlp get diagnosa
+//{Base URL}/vclaim/poli/{parameter}
 GET http://localhost:3000/vclaim/poli/ICU
 
 ################################
 //vclaim1.1 dvlp faskes
+//{Base URL}/faskes/{Parameter 1}/{Parameter 2}
 GET http://localhost:3000/vclaim/faskes/kalijaga/2
 
+###############################
+//vclaim1.1 dvlp dokter ##DATA BELUM ADA
+//{Base URL}/dokter/pelayanan/{Parameter 1}/tglPelayanan/{Parameter 2}/Spesialis/{Parameter 3}
+GET http://localhost:3000/vclaim/dpjp/1/2021-09-07/umum
+
+
+################################
+//vclaim1.1 dvlp getPropinsi
+//{Base URL}/vclaim/propinsi
+GET http://localhost:3000/vclaim/propinsi
+
+################################
+//vclaim1.1 dvlp getKabupaten
+//{Base URL}/vclaim/kabupaten/12
+GET http://localhost:3000/vclaim/kabupaten/12
+
+################################
+//vclaim1.1 dvlp getKecamatan
+//{Base URL}/vclaim/kecamatan/:par1
+GET http://localhost:3000/vclaim/kecamatan/0161
+
+################################
+//vclaim1.1 dvlp getProcedure
+//{Base URL}/vclaim/procedure/:par1
+GET http://localhost:3000/vclaim/procedure/ispa
+
+################################
+//vclaim1.1 dvlp getKelasRawat
+//{Base URL}/vclaim/propinsi
+GET http://localhost:3000/vclaim/kelasrawat
+
+################################
+//vclaim1.1 dvlp getDokter ##DATA TIDAK ADA
+//{Base URL}/vclaim/dokter/:par1
+GET http://localhost:3000/vclaim/dokter/hanafi
+
+################################
+//vclaim1.1 dvlp get Diagnosa PRB
+//{Base URL}/vclaim/diagnosaprb
+GET http://localhost:3000/vclaim/diagnosaprb
+
+################################
+//vclaim1.1 dvlp getDokter 
+//{Base URL}/vclaim/obatprb/:par1
+GET http://localhost:3000/vclaim/obatprb/insulin
+
+################################
+//vclaim1.1 dvlp get Diagnosa PRB
+//{Base URL}/vclaim/diagnosaprb
+GET http://localhost:3000/vclaim/spesialistik
+
+################################
+//vclaim1.1 dvlp get Diagnosa PRB
+//{Base URL}/vclaim/diagnosaprb
+GET http://localhost:3000/vclaim/ruangrawat
+
+################################
+//vclaim1.1 dvlp get Diagnosa PRB
+//{Base URL}/vclaim/diagnosaprb
+GET http://localhost:3000/vclaim/carakeluar
+
+
+################################
+//vclaim1.1 dvlp get Diagnosa PRB
+//{Base URL}/vclaim/diagnosaprb
+GET http://localhost:3000/vclaim/pascapulang
+//nik/3321062508410001/2021-03-08
+
+################################
+//vclaim1.1 dvlp get NOKA
+//{Base URL}/vclaim/nokartu/0001803721702/2021-03-08
+GET http://localhost:3000/vclaim/nokartu/0001803721702/2021-03-08
+
+###
+GET http://localhost:3000/vclaim/nokartu/0001023527237/2021-07-02
+
+################################
+//vclaim1.1 dvlp get NIK
+//{Base URL}/vclaim/nik/3321062508410001/2021-03-08
+GET http://localhost:3000/vclaim/nik/3321062508410001/2021-03-08
+################################
+GET http://localhost:3000/vclaim/nik/3315172106720002/2021-07-02
+
+################################
+GET http://localhost:3000/vclaim/nik/3321041108760001/2021-03-25
+
+################################
+//vclaim1.1 dvlp get SEP ##DATA KOSONG
+//{Base URL}/vclaim/sep/1131R0040321V002004
+GET http://localhost:3000/vclaim/sep/0161R0020621V000011
+###
+GET http://localhost:3000/vclaim/sep/1131R0040321V007063
+
+
+################################
+//{BASE URL}/{Service Name}/Rujukan/{parameter}
+//Parameter : Nomor Rujukan
+//{Base URL}/vclaim/sep/1131R0040321V002004
+//http://localhost:3000/rujpus/
+GET http://localhost:3000/vclaim/sep/0161R0020621V000011
+
+
+//{BASE URL}/{Service Name}/Rujukan/Peserta/{parameter}
+//Parameter : Nomor kartu
+//http://localhost:3000/rujpuspes/
+
+//{BASE URL}/{Service Name}/Rujukan/RS/{parameter}
+//Parameter : Nomor Rujukan
+//http://localhost:3000/rujrs/
+
+
+//{BASE URL}/{Service Name}/Rujukan/Peserta/{parameter}
+//Parameter : Nomor kartu
+//http://localhost:3000/rujpuspes/
+
+//{BASE URL}/{Service Name}/Rujukan/RS/Peserta/{parameter}
+//Parameter : Nomor kartu
+//http://localhost:3000/rujrspes/
+
+################################
+//vclaim1.1 dvlp get SEP ##DATA KOSONG
+//{BASE URL}/{Service Name}/Rujukan/List/Peserta/{parameter}
+//Parameter : Nomor kartu
+//{Base URL}/vclaim/rujrslist/0002424858671
+GET http://localhost:3000/vclaim/rujpuslist/0002424858671
+
+################################
+//vclaim1.1 dvlp get SEP ##DATA KOSONG
+//{BASE URL}/{Service Name}/Rujukan/List/TglRujukan/{parameter}
+//Parameter : Nomor kartu
+//{Base URL}/vclaim/rujlisttgl/0002424858671
+GET http://localhost:3000/vclaim/rujlisttgl/2021-09-01
+
+
+
+
+################################
+//vclaim1.1 dvlp get SEP ##DATA KOSONG
+//{Base URL}/vclaim/rujrslist/0002424858671
+GET http://localhost:3000/vclaim/rujrslist/0001803721702
+
+
+################################
+//vclaim1.1 dvlp Create SEP
+//{Base URL}/vclaim/rujrslist/0002424858671
+POST http://localhost:3000/vclaim/sepinsert
+
+
+
+
+
+################################
+###############################
+###############################
 ################################
 //get api antrian
 GET http://localhost:3000/antrian
@@ -38,4 +195,8 @@ GET http://localhost:3000/antri-poli
 
 ###############################
 //antreanv2 dvlp get dokter
-GET http://localhost:3000/antri-jadwal/kodepoli/UMU/tanggal/2021-08-01
+GET http://localhost:3000/antri-jadwal/kodepoli/INT/tanggal/2021-11-01
+
+###############################
+//antreanv2 dvlp add antrian
+POST http://localhost:3000/antri-add

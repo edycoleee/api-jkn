@@ -1,7 +1,6 @@
 const express = require("express");
 const moment = require("moment");
-const { getDiagnosa, getPoli, getFaskes } = require("./API/api_vclaim");
-const { getAntriPoli } = require("./API/api_antrian2");
+const { getAntriPoli,postAddAntrian } = require("./API/api_antrian2");
 const vclaimRoutes = require("./routes/vclaimRoutes")
 const antrianRoutes = require("./routes/antrianRoutes")
 const aplicareRoutes = require("./routes/aplicareRoutes")
@@ -35,33 +34,6 @@ app.get("/", (req, res) => {
 });
 
 
-//Routes
-//VCLAIM -
-
-
-
-
-
-
-//BPJS
-//Referensi
-app.get("/diagnosa/:par1", getDiagnosa);
-app.get("/poli/:par1", getPoli);
-app.get("/faskes/:par1/:par2", getFaskes);
-// app.get("/dpjp/:par1/:par2/:par3", getDpjp);
-// app.get("/propinsi", getPropinsi);
-// app.get("/kabupaten/:par1", getKabupaten);
-// app.get("/kecamatan/:par1", getKecamatan);
-// app.get("/procedure/:par1", getProcedure);
-// app.get("/kelasrawat", getKelasRawat);
-// app.get("/dokter/:par1", getDokter);
-// app.get("/spesialistik", getSpesialistik);
-// app.get("/ruangrawat", getRuangRawat);
-// app.get("/carakeluar", getCaraKeluar);
-// app.get("/pascapulang", getPascaPulang);
-//Peserta
-// app.get("/nokartu/:par1/:par2", getNoKartu);
-// app.get("/nik/:par1/:par2", getNIK);
 // //SEP
 // app.get("/sep/:par1", getCariSEP);
 // app.get("/sepcbg/:par1", getCariSEPCBG);
@@ -88,6 +60,7 @@ app.get("/faskes/:par1/:par2", getFaskes);
 //BPJS-ANTRIAN V2
 //Referensi
 app.get("/antri-poli", getAntriPoli);
+app.post("/antri-add", postAddAntrian);
 
 
 const port = 3000;

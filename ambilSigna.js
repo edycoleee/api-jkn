@@ -9,11 +9,20 @@ dotenv.config();
 const consId = process.env.CONSID;
 const secret = process.env.SECRET;
 const user_key = process.env.USER_KEY;
-
+const URL_vclaim = process.env.VCLAIM;
+const URL_aplicare = process.env.APLICARE;
+const URL_antrian = process.env.ANTRIAN;
+let uri = ""
 const options = {
   host: "dvlp.bpjs-kesehatan.go.id",
   port: ":8888",
   service: "vclaim-rest-1.1",
+};
+
+const optionsLive = {
+  host: "new-api.bpjs-kesehatan.go.id",
+  port: ":8080",
+  service: "new-vclaim-rest",
 };
 
 const aplicareOptions = {
@@ -23,10 +32,10 @@ const aplicareOptions = {
 };
 
 const antrianOptionsLive = {
-  host: "apijkn.bpjs-kesehatan.go.id",
-  port: ":8888",
-  service: "antreanrs",
-};
+    host: "new-api.bpjs-kesehatan.go.id",
+    port: ":8080",
+    service: "new-vclaim-rest",
+  };
 
 const antrianOptions = {
   host: "apijkn-dev.bpjs-kesehatan.go.id",
@@ -34,7 +43,12 @@ const antrianOptions = {
   service: "antreanrs_dev",
 };
 
-const uri = `https://${options.host}/${options.service}/`;
+if (URL_vclaim === "LIVE") {
+  uri = `https://${optionsLive.host}${optionsLive.port}/${optionsLive.service}/`;
+} else {
+  uri = `https://${options.host}/${options.service}/`;
+}
+console.log(uri,URL_vclaim);
 const aplicareuri = `https://${aplicareOptions.host}${aplicareOptions.port}/${aplicareOptions.service}/`;
 const uri_antrian = `https://${antrianOptions.host}/${antrianOptions.service}/`;
 
@@ -54,7 +68,7 @@ function stringDecryptV2(tStamp, string) {
 }
 
 function decompressV2(string) {
-  var decompores = LZString.decompressFromBase64(string);
+  var decompores = LZString.decompressFromEncodedURIComponent(string);
   return decompores;
 }
 
@@ -68,8 +82,10 @@ const createHeader = (tStamp) => {
     "X-timestamp": tStamp,
     "X-signature": signature,
     user_key,
+    'Content-Type': 'application/json',
   };
 };
+
 
 module.exports = {
   uri,
@@ -78,4 +94,5 @@ module.exports = {
   stringDecryptV2,
   decompressV2,
   createHeader,
+  URL_vclaim
 };
